@@ -1,0 +1,32 @@
+{
+  "name": "profolio_web_1",
+  "version": "1.0.0",
+  "description": "this is prototype web for Hanh portfolio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Le Phuong Nam",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.15.8",
+    "@chakra-ui/icon": "^1.1.12",
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "framer-motion": "^3.1.1",
+    "next": "^11.1.2",
+    "nvm": "0.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "stylis": "^4.0.10"
+  },
+  "devDependencies": {
+    "eslint-config-next": "^11.1.2",
+    "prettier": "^2.4.1"
+  }
+}
