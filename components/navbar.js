@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Logo from './logo';
 import NextLink from 'next/link';
 import {
@@ -14,7 +15,8 @@ import {
     IconButton,
     useColorModeValue
 }   from '@chakra-ui/react';
-import { HamburgerIcon } from '@chakra-ui/icon';
+import { HamburgerIcon } from '@chakra-ui/icons';
+import ThemeToggleButton from './theme-toggle-button';
 
 const LinkItem = ({ href, path, children }) => {
     const active = path === href
@@ -35,8 +37,7 @@ const LinkItem = ({ href, path, children }) => {
 const NavBar = props => {
     const { path } = props
 
-    return (
-        <Box 
+    return (        <Box 
             position="fixed"
             as="nav"
             w="100%"
@@ -74,6 +75,33 @@ const NavBar = props => {
                         Posts
                     </LinkItem>
                 </Stack>
+                <Box flex={1} align="right">
+                <ThemeToggleButton />
+                    <Box ml={2} display={{ base: 'inline-block', md: 'none' }} >
+                        <Menu>
+                            <MenuButton
+                                as={IconButton}
+                                icon={<HamburgerIcon />}
+                                variant="outline"
+                                aria-label="option"
+                            />
+                            <MenuList>
+                                <NextLink href="/" passHref>
+                                    <MenuItem as={Link}>About</MenuItem>
+                                </NextLink>
+                                <NextLink href="/Works" passHref>
+                                    <MenuItem as={Link}>Works</MenuItem>
+                                </NextLink>
+                                <NextLink href="/Posts" passHref>
+                                    <MenuItem as={Link}>Posts</MenuItem>
+                                </NextLink>
+                                <MenuItem as={Link} href="https://github.com/booboonuu/portfolio_web">
+                                    ViewSource
+                                </MenuItem>
+                            </MenuList>
+                        </Menu>
+                    </Box>
+                </Box>
             </Container>
         </Box>
     )
